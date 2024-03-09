@@ -1,25 +1,26 @@
 import React from 'react'
 import { FaRegUserCircle } from "react-icons/fa";
 import { useAuth } from '../../Contexxt/Auth';
+import { Link } from 'react-router-dom';
 <link src="https://abubakersaeed.github.io/dashboard-ui-n20/public/style.css"></link>
 
 const Leftsiderbar = () => {
     const [auth, setAuth] = useAuth();
     return (
-        <div class="app-body-navigation">
+        <div class="app-body-navigation shadow">
         <nav class="navigation px-2 py-3 border-3">
-            <a href="#">
+            <Link to={'/admin/dashboard'}>
                 <i class="ph-browsers"></i>
                 <span>Dashboard</span>
-            </a>
-            <a href="#">
+            </Link>
+            <Link to={'/admin/category'}>
                 <i class="ph-check-square"></i>
-                <span>Scheduled</span>
-            </a>
-            <a href="#">
+                <span>Category</span>
+            </Link>
+            <Link to={'/admin/product'}>
                 <i class="ph-swap"></i>
-                <span>Transfers</span>
-            </a>
+                <span>Product</span>
+            </Link>
             <a href="#">
                 <i class="ph-file-text"></i>
                 <span>Templates</span>

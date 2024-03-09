@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import Header from './Header'
+import { useNavigate } from 'react-router-dom'
 
 
 function Register() {
@@ -9,6 +10,7 @@ function Register() {
   const [Lastname, setLastname] = useState('')
   const [Email, setEmail] = useState('')
   const [password, setpassword] = useState('')
+  const navigate = useNavigate();
   let URL = `http://localhost:8000/user`;
 
   const submit = async (e) => {
@@ -19,12 +21,14 @@ function Register() {
         Lastname: Lastname,
         Email: Email,
         password: password,
+        role : 'user'
       });
-      console.log(data);
+      alert('user succesfully insert');
       setFirstname('');
       setLastname('');
       setEmail('');
       setpassword('');
+      navigate('/');
     } catch (error) {
       console.log(error);
       return false;
